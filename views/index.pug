@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    // block content also in layout template
+    // so the layout can specify 
+    // common UI elements in relation to any content
+    h1 #{title}
+    ul.list-group
+        // pug for each loop, takes articles
+        // array, sets each item in var article
+        // then does something with each var
+        each article, i in articles
+            li.list-group-item
+                a(href='/article/'+article._id)= article.title
